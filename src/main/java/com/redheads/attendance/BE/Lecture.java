@@ -15,7 +15,7 @@ public class Lecture {
     private User teacher;
     private List<User> students = new ArrayList<>();
 
-    public Lecture(String name, Date start, Date end, User teacher) throws UserTypeException {
+    public Lecture(String name, LocalDate start, LocalDate end, User teacher) throws UserTypeException {
         setName(name);
         setStart(start);
         setEnd(end);

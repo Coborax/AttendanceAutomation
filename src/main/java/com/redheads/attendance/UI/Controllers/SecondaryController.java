@@ -1,6 +1,8 @@
-package com.redheads.attendance;
+package com.redheads.attendance.UI.Controllers;
 
 import java.io.IOException;
+
+import com.redheads.attendance.App;
 import javafx.fxml.FXML;
 
 public class SecondaryController {

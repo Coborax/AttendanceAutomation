@@ -6,11 +6,13 @@ public class User {
 
     private String username;
     private String name;
+    private String course;
     private UserType type;
 
-    public User(String username, String name, UserType type) {
+    public User(String username, String name, String course, UserType type) {
         this.username = username;
         this.name = name;
+        this.course = course;
         this.type = type;
     }
 
@@ -36,5 +38,13 @@ public class User {
 
     public void setType(UserType type) {
         this.type = type;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 }
