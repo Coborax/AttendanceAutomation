@@ -8,9 +8,14 @@ import com.redheads.attendance.App;
 import com.redheads.attendance.BLL.UserManager;
 import com.redheads.attendance.UI.Models.UserInfoModel;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class StudentAttendanceController extends BaseController implements Initializable {
 
@@ -29,5 +34,9 @@ public class StudentAttendanceController extends BaseController implements Initi
             nameLabel.textProperty().bind(userInfoModel.userFullNameProperty());
             courseLabel.textProperty().bind(userInfoModel.userCourseProperty());
         });
+    }
+
+    public void handleOverview(ActionEvent actionEvent) throws IOException {
+        App.setRoot("secondary");
     }
 }

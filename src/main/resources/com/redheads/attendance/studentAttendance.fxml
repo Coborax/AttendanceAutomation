@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -36,5 +38,11 @@
             </VBox>
          </children>
       </HBox>
+      <ButtonBar>
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#handleOverview" text="Overview" />
+          <Button mnemonicParsing="false" text="Logout" />
+        </buttons>
+      </ButtonBar>
    </children>
 </VBox>
