@@ -10,10 +10,15 @@ import com.redheads.attendance.BLL.UserManager;
 import com.redheads.attendance.UI.Models.AttendanceModel;
 import com.redheads.attendance.UI.Models.UserInfoModel;
 import javafx.application.Platform;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.cell.CheckBoxListCell;
+import javafx.util.Callback;
 
 public class StudentAttendanceController extends BaseController implements Initializable {
 
@@ -37,6 +42,17 @@ public class StudentAttendanceController extends BaseController implements Initi
             courseLabel.textProperty().bind(userInfoModel.userCourseProperty());
 
             lecturesListView.setItems(attendanceModel.getLecturesForUser(userInfoModel.getUser()));
+
+            lecturesListView.setCellFactory(CheckBoxListCell.forListView(new Callback<String, ObservableValue<Boolean>>() {
+                @Override
+                public ObservableValue<Boolean> call(String item) {
+                    BooleanProperty observable = new SimpleBooleanProperty();
+                    observable.addListener((obs, wasSelected, isNowSelected) ->
+                            System.out.println("Check box for "+item+" changed from "+wasSelected+" to "+isNowSelected)
+                    );
+                    return observable ;
+                }
+            }));
         });
     }
 }
