@@ -1,6 +1,7 @@
 package com.redheads.attendance.BE;
 
 import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,8 +9,8 @@ import java.util.List;
 public class Lecture {
     
     private String name;
-    private Date start;
-    private Date end;
+    private LocalDate start;
+    private LocalDate end;
 
     private User teacher;
     private List<User> students = new ArrayList<>();
@@ -29,22 +30,25 @@ public class Lecture {
         this.name = name;
     }
 
-    public Date getStart() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public void setStart(Date start) throws DateTimeException {
-        if (start.after(new Date(System.currentTimeMillis()))) {
-            throw new DateTimeException("Date has to be after today");
+    public void setStart(LocalDate start) throws DateTimeException {
+        if (start.isBefore(LocalDate.now())) {
+            throw new DateTimeException("Date has to be after today or today");
         }
         this.start = start;
     }
 
-    public Date getEnd() {
+    public LocalDate getEnd() {
         return end;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd(LocalDate end) {
+        if (end.isBefore(LocalDate.now())) {
+            throw new DateTimeException("Date has to be after today");
+        }
         this.end = end;
     }
 
