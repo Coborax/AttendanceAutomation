@@ -20,7 +20,7 @@ public class SecondaryController extends BaseController implements Initializable
     @FXML
     private ComboBox boxClass;
     private UserInfoModel userInfoModel;
-    private ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
+    private ObservableList<PieChart.Data> pieData;
     private ArrayList<String> subjects = new ArrayList<String>();
 
 
