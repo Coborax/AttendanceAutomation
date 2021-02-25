@@ -1,5 +1,7 @@
 package com.redheads.attendance;
 
+import com.redheads.attendance.BE.UserTypeException;
+import com.redheads.attendance.BLL.SubjectManager;
 import com.redheads.attendance.BLL.UserManager;
 import com.redheads.attendance.UI.Controllers.BaseController;
 import javafx.application.Application;
@@ -17,7 +19,17 @@ public class App extends Application {
 
     private static Scene scene;
 
-    private static UserManager userManager = new UserManager();
+    public static UserManager userManager = new UserManager();
+    public static SubjectManager subjectManager;
+
+    //TODO: Fix this, whatever it is ＼(〇_ｏ)／
+    static {
+        try {
+            subjectManager = new SubjectManager();
+        } catch (UserTypeException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -36,6 +48,7 @@ public class App extends Application {
 
         BaseController controller = fxmlLoader.getController();
         controller.setUserManager(userManager);
+        controller.setSubjectManager(subjectManager);
 
         return root;
     }
