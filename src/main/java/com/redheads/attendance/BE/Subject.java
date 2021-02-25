@@ -26,6 +26,11 @@ public class Subject {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public String getName() {
         return name;
     }

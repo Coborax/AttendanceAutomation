@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="VBox" alignment="TOP_CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.TeacherAttendanceController">
+<VBox fx:id="VBox" alignment="TOP_CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="Main" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.TeacherAttendanceController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -43,19 +43,19 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox prefWidth="150.0" />
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <ComboBox fx:id="subjectList" prefWidth="150.0" />
+            <TableView fx:id="attendanceTableView" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Name" />
-                <TableColumn prefWidth="75.0" text="Absence" />
-                  <TableColumn prefWidth="86.0" text="Most absent" />
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="absenceColumn" prefWidth="75.0" text="Absence" />
+                  <TableColumn fx:id="mostAbsenceColumn" prefWidth="86.0" text="Most absent" />
               </columns>
             </TableView>
          </children>
       </VBox>
       <ButtonBar>
          <buttons>
-            <Button mnemonicParsing="false" text="Logout" />
+            <Button mnemonicParsing="false" styleClass="Btn" text="Logout" />
          </buttons>
       </ButtonBar>
    </children>

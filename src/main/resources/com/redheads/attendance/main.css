@@ -1,0 +1,42 @@
+.LoginBtn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: #ecf0f1;
+    -fx-background-radius: 100%;
+}
+
+.LoginBtn:hover {
+    -fx-background-color: #2980b9;
+}
+
+TextField {
+    -fx-background-color: none;
+    -fx-border-color: #3498db;
+    -fx-border-width: 0.2em;
+    -fx-border-radius: 10em;
+    -fx-padding: 1em;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+.Btn {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 1em;
+    -fx-border-color: #2980b9;
+    -fx-border-width: 0.5em;
+    -fx-border-radius: 1em;
+    -fx-padding: 1em;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+ListView {
+    -fx-background-color: #3498db;
+}
+
+.Main {
+    -fx-background-color: #34495e;
+}
+
+Label {
+    -fx-text-fill: #ecf0f1;
+}

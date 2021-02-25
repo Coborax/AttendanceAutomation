@@ -8,6 +8,8 @@ public class User {
     private String name;
     private String course;
     private UserType type;
+    private float absence = 0.0f;
+    private String mostAbsent = "Monday";
 
     public User(String username, String name, String course, UserType type) {
         this.username = username;
@@ -55,5 +57,21 @@ public class User {
             return otherUsername.equals(this.username);
         }
         return false;
+    }
+
+    public float getAbsence() {
+        return absence;
+    }
+
+    public void setAbsence(float absence) {
+        this.absence = absence;
+    }
+
+    public String getMostAbsent() {
+        return mostAbsent;
+    }
+
+    public void setMostAbsent(String mostAbsent) {
+        this.mostAbsent = mostAbsent;
     }
 }

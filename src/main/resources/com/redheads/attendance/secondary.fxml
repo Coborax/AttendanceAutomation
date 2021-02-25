@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.SecondaryController">
+<AnchorPane prefHeight="480.0" prefWidth="640.0" styleClass="Main" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.SecondaryController">
    <children>
       <VBox alignment="CENTER" prefHeight="490.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <PieChart fx:id="pieChart" prefHeight="419.0" prefWidth="620.0" />
             <ButtonBar>
               <buttons>
-                  <Button mnemonicParsing="false" onAction="#handleClose" text="Close" />
-                <Button mnemonicParsing="false" text="Logout" />
+                  <Button mnemonicParsing="false" onAction="#handleClose" styleClass="Btn" text="Close" />
+                <Button mnemonicParsing="false" styleClass="Btn" text="Logout" />
               </buttons>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

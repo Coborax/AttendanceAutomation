@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="VBox" alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.LoginController">
+<VBox fx:id="VBox" alignment="CENTER" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="10.0" styleClass="Main" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.LoginController">
    <padding>
-      <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+      <Insets bottom="20.0" left="150.0" right="150.0" top="20.0" />
    </padding>
    <children>
       <ImageView fitHeight="332.0" fitWidth="403.0" pickOnBounds="true" preserveRatio="true">
@@ -24,8 +24,14 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="username" promptText="Username" />
+      <TextField fx:id="username" prefWidth="445.0" promptText="Username" />
       <TextField promptText="Password" />
-      <Button mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="679.0" text="Login" />
+      <Button mnemonicParsing="false" onAction="#login" prefHeight="60.0" prefWidth="60.0" styleClass="LoginBtn" text="→">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin></Button>
    </children>
 </VBox>
