@@ -28,7 +28,7 @@ public class SubjectManager {
         return subjects;
     }
 
-    public List<Lecture> getAllLecturesforUserAtDate(User user, LocalDateTime date) {
+    public List<Lecture> getAllLecturesForUserAtDate(User user, LocalDateTime date) {
         List<Lecture> res = new ArrayList<>();
 
         for (Subject s : subjects) {

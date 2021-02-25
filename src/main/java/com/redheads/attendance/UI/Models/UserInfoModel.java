@@ -18,7 +18,7 @@ public class UserInfoModel {
         this.userFullName = new SimpleStringProperty();
         this.userCourse = new SimpleStringProperty();
 
-        setUser(userManager.getUsers().get(1));
+        setUser(userManager.getUsers().get(0));
     }
 
     public String getUserFullName() {
