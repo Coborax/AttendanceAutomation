@@ -31,13 +31,13 @@ public class MockSubjectDAO implements ISubjectDAO {
 
         if (teacher != null) {
             Subject s = new Subject(1, "SCO2", teacher);
-            s.addLecture(new Lecture(s, LocalDateTime.now().plusHours(1), LocalDateTime.now().plusHours(2)));
+            s.addLecture(new Lecture(s, LocalDateTime.now().plusSeconds(5), LocalDateTime.now().plusHours(1)));
             s.addStudent(App.userManager.getUsers().get(0));
             s.addStudent(App.userManager.getUsers().get(1));
             mockSubjects.add(s);
 
-            s = new Subject(1, "SDE2", teacher);
-            s.addLecture(new Lecture(s, LocalDateTime.now().plusHours(2), LocalDateTime.now().plusHours(3)));
+            s = new Subject(2, "SDE2", teacher);
+            s.addLecture(new Lecture(s, LocalDateTime.now().plusHours(1), LocalDateTime.now().plusHours(2)));
             s.addStudent(App.userManager.getUsers().get(0));
             mockSubjects.add(s);
         }

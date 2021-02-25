@@ -21,7 +21,7 @@ public class Subject {
     public boolean equals(Object obj) {
         if (obj instanceof Subject) {
             Integer otherID = (Integer)((Subject) obj).id;
-            otherID.equals(this.id);
+            return otherID.equals(this.id);
         }
         return false;
     }

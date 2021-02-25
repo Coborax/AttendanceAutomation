@@ -9,6 +9,7 @@ import com.redheads.attendance.UI.Models.AttendanceModel;
 import com.redheads.attendance.UI.Models.UserInfoModel;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import com.redheads.attendance.BE.Lecture;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ObservableValue;
@@ -46,16 +47,20 @@ public class StudentAttendanceController extends BaseController implements Initi
 
             lecturesListView.setItems(attendanceModel.getLecturesForUser(userInfoModel.getUser()));
 
-            lecturesListView.setCellFactory(CheckBoxListCell.forListView(new Callback<String, ObservableValue<Boolean>>() {
-                @Override
-                public ObservableValue<Boolean> call(String item) {
-                    BooleanProperty observable = new SimpleBooleanProperty();
-                    observable.addListener((obs, wasSelected, isNowSelected) ->
-                            System.out.println("Check box for "+item+" changed from "+wasSelected+" to "+isNowSelected)
-                    );
-                    return observable ;
-                }
+            lecturesListView.setCellFactory(CheckBoxListCell.forListView((Callback<Lecture, ObservableValue<Boolean>>) item -> {
+                BooleanProperty observable = new SimpleBooleanProperty();
+                observable.addListener((obs, oldVal, newVal) -> {
+                    if (!attendanceModel.validateAttendance(userInfoModel.getUser(), item, newVal)) {
+                        Platform.runLater(() -> observable.setValue(false));
+                        System.out.println("User: " + userInfoModel.getUser().getUsername() + " cannot be present, because the class hasn't started yet");
+                    } else {
+                        System.out.println("User: " + userInfoModel.getUser().getUsername() + " is marked present");
+                    }
+                });
+                return observable ;
             }));
+
+            System.out.println("Done setting up");
         });
 
         // If a teacher is logged in, remove the overview button.

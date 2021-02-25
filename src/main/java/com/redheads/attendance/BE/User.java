@@ -47,4 +47,13 @@ public class User {
     public void setCourse(String course) {
         this.course = course;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof User) {
+            String otherUsername = (String) ((User) obj).getUsername();
+            return otherUsername.equals(this.username);
+        }
+        return false;
+    }
 }

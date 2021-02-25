@@ -6,10 +6,7 @@ import com.redheads.attendance.BLL.SubjectManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 public class AttendanceModel {
 
@@ -21,8 +18,30 @@ public class AttendanceModel {
         this.subjectManager = subjectManager;
     }
 
+    public boolean validateAttendance(User user, Lecture lecture, boolean wasThere) {
+        date = LocalDateTime.now();
+        if (user.getType() != User.UserType.TEACHER) {
+            if (lecture.getStart().isBefore(date) && lecture.getEnd().isAfter(date)) {
+                updateAttendance(user, lecture, wasThere);
+                return true;
+            }
+        } else {
+            updateAttendance(user, lecture, wasThere);
+            return true;
+        }
+        return false;
+    }
+
+    private void updateAttendance(User user, Lecture lecture, boolean wasThere) {
+        if (wasThere) {
+            lecture.addPresent(user);
+        } else {
+            lecture.removePresent(user);
+        }
+    }
+
     public ObservableList<Lecture> getLecturesForUser(User user) {
-        return FXCollections.observableArrayList(subjectManager.getAllLecturesforUserAtDate(user, date));
+        return FXCollections.observableArrayList(subjectManager.getAllLecturesForUserAtDate(user, date));
     }
 
     public LocalDateTime getDate() {

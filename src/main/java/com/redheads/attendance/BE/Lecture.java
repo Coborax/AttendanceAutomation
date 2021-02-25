@@ -4,12 +4,16 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Lecture {
 
     private Subject subject;
     private LocalDateTime start;
     private LocalDateTime end;
+
+    private List<User> presentList = new ArrayList<>();
 
     public Lecture(Subject subject, LocalDateTime start, LocalDateTime end) throws UserTypeException {
         setSubject(subject);
@@ -45,6 +49,18 @@ public class Lecture {
             throw new DateTimeException("Date has to be after now");
         }
         this.end = end;
+    }
+
+    public List<User> getPresentList() {
+        return presentList;
+    }
+
+    public void addPresent(User user) {
+        presentList.add(user);
+    }
+
+    public void removePresent(User user) {
+        presentList.remove(user);
     }
 
     @Override
