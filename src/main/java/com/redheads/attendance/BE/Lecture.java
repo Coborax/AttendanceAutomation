@@ -2,64 +2,71 @@ package com.redheads.attendance.BE;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Lecture {
-    
-    private String name;
-    private LocalDate start;
-    private LocalDate end;
 
-    private User teacher;
-    private List<User> students = new ArrayList<>();
+    private Subject subject;
+    private LocalDateTime start;
+    private LocalDateTime end;
 
-    public Lecture(String name, LocalDate start, LocalDate end, User teacher) throws UserTypeException {
-        setName(name);
+    private List<User> presentList = new ArrayList<>();
+
+    public Lecture(Subject subject, LocalDateTime start, LocalDateTime end) throws UserTypeException {
+        setSubject(subject);
         setStart(start);
         setEnd(end);
-        setTeacher(teacher);
     }
 
-    public String getName() {
-        return name;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
-    public LocalDate getStart() {
+    public LocalDateTime getStart() {
         return start;
     }
 
-    public void setStart(LocalDate start) throws DateTimeException {
-        if (start.isBefore(LocalDate.now())) {
-            throw new DateTimeException("Date has to be after today or today");
+    public void setStart(LocalDateTime start) throws DateTimeException {
+        if (start.isBefore(LocalDateTime.now())) {
+            throw new DateTimeException("Date has to be after now");
         }
         this.start = start;
     }
 
-    public LocalDate getEnd() {
+    public LocalDateTime getEnd() {
         return end;
     }
 
-    public void setEnd(LocalDate end) {
-        if (end.isBefore(LocalDate.now())) {
-            throw new DateTimeException("Date has to be after today");
+    public void setEnd(LocalDateTime end) {
+        if (end.isBefore(LocalDateTime.now())) {
+            throw new DateTimeException("Date has to be after now");
         }
         this.end = end;
     }
 
-    public User getTeacher() {
-        return teacher;
+    public List<User> getPresentList() {
+        return presentList;
     }
 
-    public void setTeacher(User teacher) throws UserTypeException {
-        if (teacher.getType() != User.UserType.TEACHER) {
-            throw new UserTypeException("User should be a teacher");
-        }
-        this.teacher = teacher;
+    public void addPresent(User user) {
+        presentList.add(user);
+    }
+
+    public void removePresent(User user) {
+        presentList.remove(user);
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+
+        return subject.getName() + " " + formatter.format(start) + " - "+ formatter.format(end);
     }
 }
