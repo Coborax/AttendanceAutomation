@@ -46,7 +46,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ListView fx:id="lecturesListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <ListView fx:id="lecturesListView" prefHeight="200.0" prefWidth="200.0" styleClass="table-view" stylesheets="@main.css" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
       <ButtonBar>

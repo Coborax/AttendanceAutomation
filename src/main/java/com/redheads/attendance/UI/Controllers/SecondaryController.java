@@ -13,25 +13,25 @@ import javafx.scene.chart.PieChart;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class SecondaryController extends BaseController implements Initializable {
 
     @FXML
     private PieChart pieChart;
-    private UserInfoModel userInfoModel;
-    private ObservableList<PieChart.Data> pieData;
     private float presence;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DecimalFormat df = new DecimalFormat("#.#");
         Platform.runLater(() -> {
             presence = getSubjectManager().getAttendancePercent(getUser());
 
             ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
-                    new PieChart.Data("Absent", 100-presence),
-                    new PieChart.Data("Present", presence)); // TODO: ADD ABSENT BY STUDENT
+                    new PieChart.Data("Absent", Float.parseFloat(df.format(100.00-presence))),
+                    new PieChart.Data("Present", presence));
 
             pieChart.setData(pieData);
 
