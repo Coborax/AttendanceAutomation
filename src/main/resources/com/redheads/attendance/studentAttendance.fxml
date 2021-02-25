@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -39,12 +38,6 @@
             </VBox>
          </children>
       </HBox>
-      <ButtonBar>
-        <buttons>
-            <Button mnemonicParsing="false" onAction="#handleOverview" text="Overview" />
-          <Button mnemonicParsing="false" text="Logout" />
-        </buttons>
-      </ButtonBar>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
          <children>
             <Label text="Todays classes">
@@ -57,7 +50,7 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" text="Overview" />
+            <Button mnemonicParsing="false" onAction="#handleOverview" text="Overview" />
             <Button mnemonicParsing="false" text="Logout" />
          </children>
       </HBox>
