@@ -39,7 +39,7 @@ public class StudentAttendanceController extends BaseController implements Initi
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(() -> {
-            userInfoModel = new UserInfoModel(getUserManager());
+            userInfoModel = new UserInfoModel(getUserManager(), getUser());
             attendanceModel = new AttendanceModel(getSubjectManager());
 
             nameLabel.textProperty().bind(userInfoModel.userFullNameProperty());

@@ -53,4 +53,19 @@ public class SubjectManager {
         return false;
     }
 
+    public float getAttendancePercent(User user) {
+        float amountPresent = 0;
+        float total = 0;
+        for (Subject s : subjects) {
+            total += s.getLectures().size();
+
+            for (Lecture l : s.getLectures()) {
+                if (l.getPresentList().contains(user)) {
+                    amountPresent++;
+                }
+            }
+        }
+        return (amountPresent / total) * 100;
+    }
+
 }

@@ -12,13 +12,13 @@ public class UserInfoModel {
     private SimpleStringProperty userFullName;
     private SimpleStringProperty userCourse;
 
-    public UserInfoModel(UserManager userManager) {
+    public UserInfoModel(UserManager userManager, User user) {
         this.userManager = userManager;
 
         this.userFullName = new SimpleStringProperty();
         this.userCourse = new SimpleStringProperty();
 
-        setUser(userManager.getUsers().get(0));
+        setUser(user);
     }
 
     public String getUserFullName() {

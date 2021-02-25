@@ -2,6 +2,7 @@ package com.redheads.attendance.UI.Controllers;
 
 import com.redheads.attendance.App;
 import com.redheads.attendance.UI.Models.UserInfoModel;
+import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,20 +26,24 @@ public class SecondaryController extends BaseController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
-                new PieChart.Data("Absent", 100-presence),
-                new PieChart.Data("Present", presence)); // TODO: ADD ABSENT BY STUDENT
+        Platform.runLater(() -> {
+            presence = getSubjectManager().getAttendancePercent(getUser());
 
-        pieChart.setData(pieData);
+            ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
+                    new PieChart.Data("Absent", 100-presence),
+                    new PieChart.Data("Present", presence)); // TODO: ADD ABSENT BY STUDENT
 
-        // Displays values
-        pieData.forEach(data ->
-                data.nameProperty().bind(
-                        Bindings.concat(
-                                data.getName(), " ", data.pieValueProperty(), "%"
-                        )
-                )
-        );
+            pieChart.setData(pieData);
+
+            // Displays values
+            pieData.forEach(data ->
+                    data.nameProperty().bind(
+                            Bindings.concat(
+                                    data.getName(), " ", data.pieValueProperty(), "%"
+                            )
+                    )
+            );
+        });
     }
 
     public void handleClose(ActionEvent actionEvent) throws IOException {
