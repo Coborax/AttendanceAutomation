@@ -19,17 +19,8 @@ public class App extends Application {
 
     private static Scene scene;
 
-    public static UserManager userManager = new UserManager();
-    public static SubjectManager subjectManager;
-
-    //TODO: Fix this, whatever it is ＼(〇_ｏ)／
-    static {
-        try {
-            subjectManager = new SubjectManager();
-        } catch (UserTypeException e) {
-            e.printStackTrace();
-        }
-    }
+    public static UserManager userManager = UserManager.getInstance();
+    public static SubjectManager subjectManager = SubjectManager.getInstance();
 
     @Override
     public void start(Stage stage) throws IOException {
