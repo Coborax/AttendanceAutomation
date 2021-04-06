@@ -4,34 +4,33 @@ public class User {
 
     public enum UserType { STUDENT, TEACHER }
 
+    private int id;
     private String username;
     private String name;
     private String course;
     private UserType type;
     private float absence = 0.0f;
-    private String mostAbsent = "Monday";
+    private String mostAbsent = "Monday"; //TODO: NO HARDCODE PLZZ
 
-    public User(String username, String name, String course, UserType type) {
+    public User(int id, String username, String name, String course, float absence, UserType type) {
+        this.id = id;
         this.username = username;
         this.name = name;
         this.course = course;
+        this.absence = absence;
         this.type = type;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public UserType getType() {
