@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.redheads.attendance.App;
 import com.redheads.attendance.BE.Subject;
 import com.redheads.attendance.BE.User;
+import com.redheads.attendance.BLL.UserManager;
 import com.redheads.attendance.UI.Models.AttendanceModel;
 import com.redheads.attendance.UI.Models.AttendanceOverviewModel;
 import com.redheads.attendance.UI.Models.UserInfoModel;
@@ -47,6 +48,8 @@ public class TeacherAttendanceController extends BaseController implements Initi
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(() -> {
+            UserManager.getInstance().updateAllUsersAttendance();
+
             userInfoModel = new UserInfoModel(getUserManager(), getUser());
             attendanceModel = new AttendanceOverviewModel(getSubjectManager());
 

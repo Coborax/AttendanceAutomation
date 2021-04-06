@@ -19,7 +19,20 @@ public class SubjectManager {
     private List<Subject> subjects;
     private ISubjectDAO subjectDAO;
 
-    public SubjectManager() throws UserTypeException {
+    private static SubjectManager instance;
+
+    public static SubjectManager getInstance() {
+        if (instance == null) {
+            try {
+                instance = new SubjectManager();
+            } catch (UserTypeException e) {
+                e.printStackTrace();
+            }
+        }
+        return instance;
+    }
+
+    private SubjectManager() throws UserTypeException {
         subjectDAO = new MockSubjectDAO();
         this.subjects = subjectDAO.getSubjects();
     }
@@ -34,7 +47,7 @@ public class SubjectManager {
         for (Subject s : subjects) {
             if (s.getStudents().contains(user)) {
                 for (Lecture l : s.getLectures()) {
-                    if (checkIfSameDay(l.getStart(), date) && date.isBefore(l.getEnd())) {
+                    if (checkIfSameDay(l.getStart(), date)) {
                         res.add(l);
                     }
                 }

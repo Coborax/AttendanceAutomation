@@ -17,8 +17,10 @@ public class Lecture {
 
     public Lecture(Subject subject, LocalDateTime start, LocalDateTime end) throws UserTypeException {
         setSubject(subject);
-        setStart(start);
-        setEnd(end);
+
+        // Set directly to bypass validation
+        this.start = start;
+        this.end = end;
     }
 
     public Subject getSubject() {
@@ -66,7 +68,6 @@ public class Lecture {
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-
         return subject.getName() + " " + formatter.format(start) + " - "+ formatter.format(end);
     }
 }

@@ -1,84 +1,84 @@
-.LoginBtn {
-    -fx-background-color: #3498db;
-    -fx-text-fill: #ecf0f1;
-    -fx-background-radius: 100%;
-}
+/*.LoginBtn {*/
+/*    -fx-background-color: #3498db;*/
+/*    -fx-text-fill: #ecf0f1;*/
+/*    -fx-background-radius: 100%;*/
+/*}*/
 
-.LoginBtn:hover {
-    -fx-background-color: #2980b9;
-}
+/*.LoginBtn:hover {*/
+/*    -fx-background-color: #2980b9;*/
+/*}*/
 
-TextField {
-    -fx-background-color: none;
-    -fx-border-color: #3498db;
-    -fx-border-width: 0.2em;
-    -fx-border-radius: 10em;
-    -fx-padding: 1em;
-    -fx-text-fill: #ecf0f1;
-    -fx-font-weight: bold;
-}
+/*TextField {*/
+/*    -fx-background-color: none;*/
+/*    -fx-border-color: #3498db;*/
+/*    -fx-border-width: 0.2em;*/
+/*    -fx-border-radius: 10em;*/
+/*    -fx-padding: 1em;*/
+/*    -fx-text-fill: #ecf0f1;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
 
-.Btn {
-    -fx-background-color: #3498db;
-    -fx-background-radius: 1em;
-    -fx-border-color: #2980b9;
-    -fx-border-width: 0.5em;
-    -fx-border-radius: 1em;
-    -fx-padding: 1em;
-    -fx-text-fill: #ecf0f1;
-    -fx-font-weight: bold;
-}
+/*.Btn {*/
+/*    -fx-background-color: #3498db;*/
+/*    -fx-background-radius: 1em;*/
+/*    -fx-border-color: #2980b9;*/
+/*    -fx-border-width: 0.5em;*/
+/*    -fx-border-radius: 1em;*/
+/*    -fx-padding: 1em;*/
+/*    -fx-text-fill: #ecf0f1;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
 
-.table-view .column-header,
-.table-view .column-header-background .filler {
-    -fx-background-color: #145E8F;
-}
+/*.table-view .column-header,*/
+/*.table-view .column-header-background .filler {*/
+/*    -fx-background-color: #145E8F;*/
+/*}*/
 
-.table-view .table-cell{
-    -fx-border-color: transparent;
-    -fx-padding: 0 0 0 5px;
-}
-
-
-.table-view .column-header .label{
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-alignment: CENTER_LEFT;
-}
+/*.table-view .table-cell{*/
+/*    -fx-border-color: transparent;*/
+/*    -fx-padding: 0 0 0 5px;*/
+/*}*/
 
 
-.table-view .cell{
-    -fx-cell-size: 35;
-    -fx-background-color: #29292D;
-    -fx-border-color: #29292D;
-    -fx-text-fill: lightgray;
-}
+/*.table-view .column-header .label{*/
+/*    -fx-text-fill: white;*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-alignment: CENTER_LEFT;*/
+/*}*/
 
-.combo-box-base {
-    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, white;
-    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-    -fx-background-radius: 3px, 3px, 2px, 1px;
-}
 
-.chart-pie-label-line {
-    -fx-stroke: white;
-    -fx-fill: white;
-}
+/*.table-view .cell{*/
+/*    -fx-cell-size: 35;*/
+/*    -fx-background-color: #29292D;*/
+/*    -fx-border-color: #29292D;*/
+/*    -fx-text-fill: lightgray;*/
+/*}*/
 
-.chart-pie-label { /*this is what you need for labels*/
-    -fx-fill: #57ABFF;
-    -fx-font-size: 1.2em;
-}
+/*.combo-box-base {*/
+/*    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, white;*/
+/*    -fx-background-insets: 0 0 -1 0, 0, 1, 2;*/
+/*    -fx-background-radius: 3px, 3px, 2px, 1px;*/
+/*}*/
 
-.chart-legend {
-    -fx-background-color:  #29292D;
-    -fx-stroke: lightgray;
-}
+/*.chart-pie-label-line {*/
+/*    -fx-stroke: white;*/
+/*    -fx-fill: white;*/
+/*}*/
 
-.Main {
-    -fx-background-color: #34495e;
-}
+/*.chart-pie-label { !*this is what you need for labels*!*/
+/*    -fx-fill: #57ABFF;*/
+/*    -fx-font-size: 1.2em;*/
+/*}*/
 
-Label {
-    -fx-text-fill: #ecf0f1;
-}
+/*.chart-legend {*/
+/*    -fx-background-color:  #29292D;*/
+/*    -fx-stroke: lightgray;*/
+/*}*/
+
+/*.Main {*/
+/*    -fx-background-color: #34495e;*/
+/*}*/
+
+/*Label {*/
+/*    -fx-text-fill: #ecf0f1;*/
+/*}*/
