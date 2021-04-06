@@ -50,4 +50,9 @@ public class MockSubjectDAO implements ISubjectDAO {
     public List<Subject> getSubjects() {
         return List.copyOf(mockSubjects);
     }
+
+    @Override
+    public void saveSubject(Subject subject) {
+
+    }
 }

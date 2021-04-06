@@ -8,4 +8,10 @@ public interface IUserDAO {
 
     List<User> getUsers();
 
+    List<User> getStudents();
+
+    float getUserAbsence(User user);
+
+    void updateAttendance(User user, float newAbsence);
+
 }

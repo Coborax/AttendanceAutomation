@@ -21,6 +21,11 @@
             <version>13</version>
         </dependency>
         <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>9.1.1.jre15-preview</version>
+        </dependency>
+        <dependency>
             <groupId>com.calendarfx</groupId>
             <artifactId>view</artifactId>
             <version>11.8.3</version>
