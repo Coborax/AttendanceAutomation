@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.calendarfx.view.page.DayPage?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="VBox" alignment="TOP_CENTER" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="Main" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.StudentAttendanceController">
+<VBox fx:id="VBox" alignment="TOP_CENTER" prefHeight="559.0" prefWidth="655.0" spacing="20.0" styleClass="Main" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.redheads.attendance.UI.Controllers.StudentAttendanceController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -39,14 +39,14 @@
             </VBox>
          </children>
       </HBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+      <VBox fx:id="pageContent" prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
          <children>
             <Label text="Todays classes">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ListView fx:id="lecturesListView" prefHeight="200.0" prefWidth="200.0" styleClass="table-view" stylesheets="@main.css" VBox.vgrow="ALWAYS" />
+            <DayPage fx:id="calendarView" dayPageLayout="DAY_ONLY" selectionMode="SINGLE" showNavigation="false" />
          </children>
       </VBox>
       <ButtonBar>
